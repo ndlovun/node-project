@@ -100,6 +100,6 @@ app.get('*', (req, res) => {
     })
 })
 
-app.listen('3002', () => {
+app.listen('3002', "127.0.0.1", () => {
     console.log('Server is up on port 3002.')
 })
