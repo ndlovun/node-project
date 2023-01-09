@@ -14,7 +14,7 @@ const forecast = (latitude, longitude, callback) => {
             body.current.weather_descriptions[0]  
             + '. It is currently '+ body.current.temperature + ' degrees out.It feels like '
             + body.current.feelslike + ' degrees out.'
-            +'Time zone: ' + body.location.timezone_id + 'Local time is: ' + body.location.localtime)
+            +'Time zone: ' + body.location.timezone_id + ' Local time is: ' + body.location.localtime)
         }
     })
 }
