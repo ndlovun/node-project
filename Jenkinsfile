@@ -2,10 +2,10 @@ pipeline {
     agent any
 
     stages {
-        stage('Run build.') {
+        stage('Run ansible playbook.') {
             steps {
-                echo 'Running make run-build.'
-                sh 'make run-build'
+                echo 'Running ansible playbook.'
+                sh 'ansible-playbook update-node-app.yml'
             }
         }
         
