@@ -4,9 +4,9 @@
   remote_user: ubuntu
   tasks:
   - name: Git pull in folder ~/node-project
-    shell: |
-      cd ~/node-project
-      git pull
-      npm install
-      npm run start
+    ansible.builtin.shell: |
+        cd ~/node-project
+        git pull
+        npm install
+        npm run start
   
