@@ -14,7 +14,9 @@
 
   - name: Run the shell script 
     ansible.builtin.shell: |
-        cd /home/ubuntu/node-project
+        cd /home/ubuntu/
+        git clone https://github.com/ndlovun/node-project.git
+        cd node-project/
         ./update-node.sh
    
   
