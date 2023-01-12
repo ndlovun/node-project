@@ -8,6 +8,9 @@
     ansible.builtin.copy:
       src: update-node.sh
       dest: /home/ubuntu/node-project
+      owner: ubuntu
+      group: ubuntu
+      mode: '0775'
 
   - name: Run the shell script 
     ansible.builtin.shell: |
