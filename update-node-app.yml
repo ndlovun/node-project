@@ -1,8 +1,8 @@
 ---
 - hosts: all
-  become: no
+  become: true
   remote_user: ubuntu
-  # become_user: root
+  become_user: ubuntu
   tasks:
   - name: Move shell script to Node server
     ansible.builtin.copy:
