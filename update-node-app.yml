@@ -3,10 +3,14 @@
   become: no
   remote_user: ubuntu
   tasks:
-  - name: Git pull in folder ~/node-project
+  - name: Move shell script to Node server
+    ansible.builtin.copy:
+      src: update-node.sh
+      dest: /home/ubuntu/node-project
+
+  - name: Run the shell script 
     ansible.builtin.shell: |
-        cd ~/node-project
-        git pull
-        npm install
-        npm run start
+        cd /home/ubuntu/node-project
+        ./update-node.sh
+   
   
