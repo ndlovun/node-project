@@ -4,19 +4,11 @@
   remote_user: ubuntu
   become_user: ubuntu
   tasks:
-  - name: Move shell script to Node server
-    ansible.builtin.copy:
-      src: update-node.sh
-      dest: /home/ubuntu/node-project
-      owner: ubuntu
-      group: ubuntu
-      mode: '0775'
 
-  - name: Run the shell script 
+  - name: Get the code and run the shell script
     ansible.builtin.shell: |
         cd /home/ubuntu/
         git clone https://github.com/ndlovun/node-project.git
         cd node-project/
         ./update-node.sh
-   
   
