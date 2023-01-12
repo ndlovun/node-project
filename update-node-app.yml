@@ -7,6 +7,7 @@
 
   - name: Get the code and run the shell script
     script: /home/ubuntu/node-project/update-node.sh
+    remote_src: true
     register: console
 
   - debug: msg="{{ console.stdout }}"
