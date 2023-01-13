@@ -9,8 +9,8 @@
       name: git
       state: latest
 
-  - name: Get the code and run the shell script
-    script: /home/ubuntu/node-project/update-node.sh
+  - name: Run the shell script
+    script: /home/ec2-user/node-project/update-node.sh
     register: console
 
   - debug: msg="{{ console.stdout }}"
