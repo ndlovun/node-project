@@ -1,9 +1,12 @@
 ---
 - hosts: all
-  become: true
-  remote_user: ubuntu
-  become_user: ubuntu
+  become: false
+  remote_user: ec2-user
   tasks:
+  - name: Install git
+    yum:
+      name: git
+      state: latest
 
   - name: Get the code and run the shell script
     script: /home/ubuntu/node-project/update-node.sh
@@ -12,4 +15,5 @@
   - debug: msg="{{ console.stdout }}"
 
   - debug: msg="{{ console.stderr }}" 
+  
   
