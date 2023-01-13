@@ -1,7 +1,8 @@
 ---
 - hosts: all
-  become: false
+  become: true
   remote_user: ec2-user
+  become_user: root
   tasks:
   - name: Install git
     yum:
@@ -15,5 +16,4 @@
   - debug: msg="{{ console.stdout }}"
 
   - debug: msg="{{ console.stderr }}" 
-  
   
