@@ -3,15 +3,13 @@
   become: false
   remote_user: ec2-user
   tasks:
-  - name: Install git
-    yum:
-      name: git
-      state: latest
+  - name: Git pull.
+    shell: cd /home/ec2-user/node-project && git pull
 
-  - name: Run the shell script
-    ansible.builtin.shell: |
-        cd /home/ec2-user/node-project && git pull
-        cd /home/ec2-user/node-project && npm install
-        cd /home/ec2-user/node-project && npm run start
+  - name: NPM install
+    shell: cd /home/ec2-user/node-project && npm install
+        
+  - name: NPM run start
+    shell: cd /home/ec2-user/node-project && npm run start
 
   
