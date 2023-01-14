@@ -1,8 +1,7 @@
 ---
 - hosts: all
-  become: true
+  become: false
   remote_user: ec2-user
-  become_user: root
   tasks:
   - name: Install git
     yum:
@@ -10,10 +9,9 @@
       state: latest
 
   - name: Run the shell script
-    script: /home/ec2-user/node-project/update-node.sh
-    register: console
+    ansible.builtin.shell: |
+        cd /home/ec2-user/node-project && git pull
+        cd /home/ec2-user/node-project && npm install
+        cd /home/ec2-user/node-project && npm run start
 
-  - debug: msg="{{ console.stdout }}"
-
-  - debug: msg="{{ console.stderr }}" 
   
