@@ -6,8 +6,8 @@
   - name: Git pull.
     shell: cd /home/ec2-user/node-project && git pull
 
-  - name: NPM install
-    shell: cd /home/ec2-user/node-project && npm install
+  # - name: NPM install
+  #   shell: cd /home/ec2-user/node-project && npm install
         
   - name: NPM run start
     shell: cd /home/ec2-user/node-project && npm run start
